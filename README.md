@@ -1,6 +1,6 @@
 # GraphQL ile verileri gösterme 
 
-Solarized dark             |  Solarized Ocean
+## Uygulama içi resimler
 :-------------------------:|:-------------------------:
 ![image](./assets/images/readme/resim1.png)  |  ![image](./assets/images/readme/resim2.png)
 
