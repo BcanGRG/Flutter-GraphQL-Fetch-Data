@@ -3,7 +3,7 @@ import 'package:graphql_basic/features/products/model/product_model.dart';
 import 'package:graphql_basic/features/products/service/product_service.dart';
 
 class ProductView extends StatefulWidget {
-  ProductView({Key? key}) : super(key: key);
+  const ProductView({Key? key}) : super(key: key);
 
   @override
   State<ProductView> createState() => _ProductViewState();
