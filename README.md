@@ -1,6 +1,6 @@
 # GraphQL ile verileri gösterme 
 
-                        |  
+Ekran1             |  Ekran 2
 :-------------------------:|:-------------------------:
 ![image](./assets/images/readme/resim1.png)  |  ![image](./assets/images/readme/resim2.png)
 
