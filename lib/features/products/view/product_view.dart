@@ -14,7 +14,6 @@ class _ProductViewState extends State<ProductView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     futureProductList = ProductService.getAllProducts();
   }
@@ -28,34 +27,41 @@ class _ProductViewState extends State<ProductView> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<ProductModel> myList = snapshot.data!;
-            print(myList[0]);
-            return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 0.75,
-                    crossAxisSpacing: 2,
-                    mainAxisSpacing: 2),
-                itemCount: myList.length,
-                itemBuilder: (context, index) {
-                  var currentProduct = myList[index].node!;
-                  return Column(
-                    children: [
-                      Text(currentProduct.productType!.name!),
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        height: 180,
-                        width: 180,
-                        child: Image.network(currentProduct.thumbnail!.url!),
-                      ),
-                      Text(currentProduct.name!),
-                    ],
-                  );
-                });
+            return buildGridView(myList);
+          } else if (snapshot.hasError) {
+            return const Center(
+              child: Text("Hata Bulundu"),
+            );
           }
 
-          return CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );
+  }
+
+  GridView buildGridView(List<ProductModel> myList) {
+    return GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            crossAxisSpacing: 2,
+            mainAxisSpacing: 2),
+        itemCount: myList.length,
+        itemBuilder: (context, index) {
+          var currentProduct = myList[index].node!;
+          return Column(
+            children: [
+              Text(currentProduct.productType!.name!),
+              Container(
+                padding: const EdgeInsets.all(2),
+                height: 180,
+                width: 180,
+                child: Image.network(currentProduct.thumbnail!.url!),
+              ),
+              Text(currentProduct.name!),
+            ],
+          );
+        });
   }
 }
