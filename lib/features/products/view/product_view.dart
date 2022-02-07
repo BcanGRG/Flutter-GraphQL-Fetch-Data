@@ -30,7 +30,7 @@ class _ProductViewState extends State<ProductView> {
             return buildGridView(myList);
           } else if (snapshot.hasError) {
             return const Center(
-              child: Text("Hata Bulundu"),
+              child: Text("Hata Bulunduu"),
             );
           }
 
