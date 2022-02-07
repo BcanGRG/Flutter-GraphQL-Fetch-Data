@@ -1,4 +1,6 @@
+import 'package:graphql_basic/core/constants/url_constants.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
-String url = "https://demo.saleor.io/graphql/";
-HasuraConnect hasuraConnect = HasuraConnect(url);
+class ConnectClient {
+  static HasuraConnect hasuraConnect = HasuraConnect(UrlConstants.apiUrl);
+}

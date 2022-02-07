@@ -5,7 +5,8 @@ import 'package:graphql_basic/features/products/schemas/products.schemas.dart';
 class ProductService {
   static Future<List<ProductModel>> getAllProducts() async {
     List<ProductModel> _list = [];
-    var response = await hasuraConnect.query(ProductsSchemas.productQuery);
+    var response =
+        await ConnectClient.hasuraConnect.query(ProductsSchemas.productQuery);
     var productList = response["data"]["products"]["edges"];
 
     if (productList is List) {

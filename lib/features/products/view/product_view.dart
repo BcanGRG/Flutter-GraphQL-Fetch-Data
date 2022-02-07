@@ -32,9 +32,9 @@ class _ProductViewState extends State<ProductView> {
             return const Center(
               child: Text("Hata Bulunduu"),
             );
+          } else {
+            return const Center(child: CircularProgressIndicator());
           }
-
-          return const Center(child: CircularProgressIndicator());
         },
       ),
     );
