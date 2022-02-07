@@ -1,7 +1,7 @@
 # GraphQL ile verileri gösterme 
 
-![image](./assets/images/readme/resim1.png)
-![image](./assets/images/readme/resim2.png)
+![image](./assets/images/readme/resim1.png =100x100) ![image](./assets/images/readme/resim2.png =100x100)
+
 
 ## Projede Kullanılan
 
